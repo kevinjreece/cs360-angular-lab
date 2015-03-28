@@ -20,6 +20,7 @@ router.get('/posts', function (req, res, next) {
 
 /* GET post. */
 router.get('/posts/:post', function (req, res, next) {
+	console.log(req.post.title);
 	req.post.populate('comments', function (err, post) {
 		res.json(req.post);
 	});
